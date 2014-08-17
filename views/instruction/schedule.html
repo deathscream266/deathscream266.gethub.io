@@ -1,0 +1,104 @@
+<div class="page">
+	
+	<div class="row">
+        <div class="col-sm-3">
+            <section class="panel panel-default mail-categories">
+            	<div class="panel-heading">Colonoscopy Schedule</div>
+                <ul class="list-group">
+                    <li ng-repeat="instruction in instructionsList" class="list-group-item" ng-class="{active: current == instruction.id}"><a href="javascript:;" ng-click="toggleTab(instruction)">
+                        <i class="fa fa-inbox"></i>{{instruction.label}}
+                    	<span class="badge badge-info pull-right">{{instruction.items}}</span>
+                    	</a>
+                    </li>
+                </ul>                
+            </section>
+
+            <section class="panel panel-default mail-categories">
+                <div class="panel-heading">Information</div>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="javascript:;">
+                        Additional Information <i class="fa fa-circle color-danger pull-right"></i>
+                    </a></li>
+                    <li class="list-group-item"><a href="javascript:;">
+                        Frequently Asked Questions (FAQ) <i class="fa fa-circle color-info pull-right"></i>
+                    </a></li>
+                    <li class="list-group-item"><a href="javascript:;">
+                        Other Frequently Asked Questions <i class="fa fa-circle color-info pull-right"></i>
+                    </a></li>
+                </ul>
+            </section>
+        
+        </div>
+        
+        <!-- Show Content -->
+        <div class="col-sm-9" ng-repeat="insData in instructionData"  ng-show="showMe({{insData.id}})">        
+			<!-- 7 Days before -->
+			<div class="row">
+				<div class="panel panel-primary">
+			    	<div class="panel-heading">
+			        	<h3 class="panel-title">{{insData.heading}}</h3>
+			        </div>
+		        </div>
+		   </div>
+		   
+   		   <div class="callout callout-{{insData.firstMessage.type}}">
+                <h4><b>{{insData.firstMessage.title}}</b></h4>
+                <p>{{insData.firstMessage.info}}
+                <ul>
+				  <li ng-repeat="fList in insData.firstMessage.messageList">{{fList}}</li>
+                </ul>
+                </p>
+            </div>
+		   
+		    <div class="row">
+		        <div class="col-md-6">
+		            <div class="panel panel-danger">
+		                <div class="panel-heading">
+		                    <h3 class="panel-title">STOP:</h3>
+		                </div>
+		                <div class="panel-body">
+							<ol>
+				  				<li ng-repeat="sList in insData.stopList">{{getAsSafeHTML(sList)}}</li>
+		                    </ol> 		                
+		                 </div>
+		            </div>
+		        </div>
+		        
+		        <div class="col-md-6">
+		            <div class="panel panel-success">
+		                <div class="panel-heading">
+		                    <h3 class="panel-title">OKAY/APPROVED:</h3>
+		                </div>
+		                <div class="panel-body">
+							<ol>
+				  				<li ng-repeat="oList in insData.okList">{{getAsSafeHTML(oList)}}</li>
+		                    </ol> 		                
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    
+		    <div class="callout callout-{{insData.lastMessage.type}}">
+                <h4><b>{{insData.lastMessage.title}}</b> {{insData.lastMessage.titleNobold}}</h4>
+                <p>{{insData.lastMessage.info}}
+                <ul>
+				  <li ng-repeat="lList in insData.lastMessage.messageList">{{lList}}</li>
+                </ul>
+                </p>
+            </div>
+            	   
+        </div>
+        
+        <div class="col-sm-9"  ng-show="showMe(0)">        
+			<!-- 7 Days before -->
+			<div class="row">
+				<div class="panel panel-primary">
+			    	<div class="panel-heading">
+			        	<h3 class="panel-title">On procedure day : 0</h3>
+			        </div>
+		        </div>
+		   </div>
+        </div>
+                
+    </div>
+</div>

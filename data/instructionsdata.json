@@ -1,0 +1,58 @@
+{
+	"instructions":[{
+		"heading":"Seven (7) days before your procedure",
+		"firstMessage": {
+			"type": "danger",
+			"title": "IMPORTANT:",
+			"info":"For the best results and to prevent the need to cancel or reschedule your colonoscopy:", 
+			"messageList":["Only follow department instructions given by your gastroenterologist or on this instruction sheet.",
+				"Do not follow instructions from any other source, including instructions that come with your MoviPrep prescription."]
+		},
+		"stopList": ["Aspirin unless prescribed by a physician",
+			"NSAIDs including: Ibuprofen (Motrin, Advil), Naproxen (Aleve, Naprosyn), and similar medications",
+			"Iron, fish oil and vitamin E",
+			"All seeds, nuts, popcorn",
+			"<br />"
+		],
+		"okList":["Any regular medications (especially blood pressure and/or cardiac medications",
+			"Acetaminophen (Tylenol)",
+			"Foods such as meat (chicken, pork, beef), fish, tofu, white bread, white rice, noodles, yogurt, fruits and vegetables (remove skin and seeds), pasta, eggs, pancakes, cheese and dairy products"
+		],
+		"lastMessage": {
+			"type": "info",
+			"title": "You will receive additional instructions, guided by your prescribing physician, if you are taking:",
+			"info": "For the best results and to prevent the need to cancel or reschedule your colonoscopy:",
+			"messageList":["Blood thinner medications such as Warfarin (Coumadin), Heparin, Lovenox, Plavix, Aggrenox, Ticlid, Pradaxa",
+				"Diabetes medications."]
+		}
+	},{
+		"heading":"The day before your procedure",
+		"firstMessage": {
+			"type": "danger",
+			"title": "IMPORTANT:",
+			"info":"For the best results and to prevent the need to cancel or reschedule your colonoscopy:", 
+			"messageList":["Eating any solids may result in your procedure being cancelled.",
+				"Make sure to drink clear liquids throughout the day to keep yourself well-hydrated."]
+		},
+		"stopList": ["Any solid food",
+			"Dairy products",
+			"Alcohol",
+			"<br /><br /><br />",
+			"<br />"
+		],
+		"okList":["Any regular medications (especially blood pressure and/or cardiac medications) and acetaminophen (Tylenol)",
+			"Water and clear liquids including:",
+			"<ul><li><i>Juices</i><b>:</b> apple, white grape, white cranberry, lemonade</li><li><i>Broth</i><b>:</b> chicken, beef or vegetable</li><li><i>Soda</i><b>:</b> 7-Up, Coke</li><li><i>Other</i><b>:</b> black coffee, tea, popsicles, jello, sports drinks</li></ul>"
+		],
+		"lastMessage": {
+			"type": "info",
+			"title": "6 p.m. the day before your procedure:</b> Drink first dose of MoviPrep solution",
+			"info": "",
+			"messageList":["Mix the MoviPrep solution (one pouch A and one pouch B) with water in the provided one liter container.",
+				"Every 10 to 15 minutes drink 8 oz of the solution (one hour total).",
+				"Drink an additional 16 to 32 ounces of clear liquids."]
+		}
+	}]
+}
+
+

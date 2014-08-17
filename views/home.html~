@@ -1,0 +1,8 @@
+<div class="page page-dashboard" data-ng-controller="DashboardCtrl">
+    <div class="page page-table">
+	    <div class="panel panel-default">
+		
+	    </div>
+    </div>
+</div>
+  

@@ -1,0 +1,55 @@
+
+<script>
+	$(document).ready(function()
+	{
+		$.ajax({
+			url: "js/restaurants.json",
+			success: function(data)
+			{
+				console.log("Found "+data);
+				var listEl =document.getElementById('placeholder-hotels');
+				
+				for (var i = 0; i < data.length; i++) {
+					var counter = data[i];
+					makeList(counter,listEl);
+				}
+			}
+		});
+	});
+	
+	function makeList( jsonObject, listElement){
+		var newLI = document.createElement('li');
+		newLI.className="list-group-item";
+		newLI.innerHTML='<strong class="name">'+jsonObject['NAME_OF_RESTAURANT']+'</strong><div><p class="address">'+jsonObject['ADDRESS']+'</p><p class="address">'+jsonObject['CUISINES']+'</p><p class="address">'+jsonObject['SERVICES']+'</p><p class="address">'+jsonObject['AVG_COST_PER_PERSON']+'</p><p class="address">'+jsonObject['TIMINGS']+'</p><p class="address">'+jsonObject['PAYMENT']+'</p><p class="address">'+jsonObject['CONTACT_DETAILS']+'</p></div>';
+		listElement.appendChild(newLI);
+		
+	}
+</script>
+
+<div class="page page-general">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div id="atmList" class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span>ATMs &amp; Banks</strong></div>
+                <input type="text" id="input" placeholder="Search" />
+                <ul id="placeholder-hotels" class="list list-group">
+                </ul>
+            </div>
+        </div>
+	</div>
+</div>
+<script>
+var input = document.getElementById('input');
+	input.onkeyup = function () {
+		var filter = input.value.toUpperCase();
+		//var filters = filter.split(",");
+		var lis = document.getElementsByTagName('li');
+		for (var i = 0; i < lis.length; i++) {
+			var name = lis[i].innerHTML;
+			if (name.toUpperCase().indexOf(filter) >= 0) 
+				lis[i].style.display = 'list-item';
+			else
+				lis[i].style.display = 'none';
+		}
+	}
+</script>
